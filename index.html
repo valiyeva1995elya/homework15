@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .block {
+            width: 170px;
+            height: 184px;
+            border: 2px solid rgb(155, 236, 236);
+            padding: 5px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: rgb(239, 255, 255);
+            margin: 0 auto;
+        }
+
+        button {
+            width: 36px;
+            height: 25px;
+            background-color: rgb(155, 236, 236);
+            color: azure;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .btn {
+            width: 116px;
+        }
+
+        .res {
+            width: 155px;
+            height: 20px;
+            border: 2px solid rgb(155, 236, 236);
+            border-radius: 5px;
+            padding-left: 10px;
+            box-sizing: border-box;
+            color: rgb(21, 228, 228);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="block">
+
+        <div class="res"></div>
+        <button onclick="fn('1')">1</button>
+        <button onclick="fn('2')">2</button>
+        <button onclick="fn('3')">3</button>
+        <button onclick="fn('+')">+</button><br>
+        <button onclick="fn('4')">4</button>
+        <button onclick="fn('5')">5</button>
+        <button onclick="fn('6')">6</button>
+        <button onclick="fn('-')">-</button><br>
+        <button onclick="fn('7')">7</button>
+        <button onclick="fn('8')">8</button>
+        <button onclick="fn('9')">9</button>
+        <button onclick="fn('*')">*</button><br>
+        <button onclick="fn('.')">.</button>
+        <button onclick="fn('0')">0</button>
+        <button onclick="deleteEl()">←</button>
+        <button onclick="fn('/')">/</button><br>
+        <button onclick="allCleans()">AC</button>
+        <button class="btn" onclick="result()">=</button><br>
+    </div>
+
+    <script>
+        let el = document.querySelector(".res");
+        let btn = document.querySelectorAll("button")
+
+        function fn(item) {
+            el.textContent += item
+        }
+
+        function result() {
+            let a = el.textContent
+            el.textContent = eval(a)
+        }
+        function allCleans() {
+            el.textContent = null
+        }
+        function deleteEl() {
+            let a = el.textContent
+            el.textContent = a.slice(0, a.length - 1)
+        }
+
+    </script>
+</body>
+
+</html>
